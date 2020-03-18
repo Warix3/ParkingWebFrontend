@@ -51,7 +51,7 @@ class AvatarDropdown extends React.Component {
 
         <Menu.Item key="logout">
           <LogoutOutlined />
-          退出登录
+          Odjava
         </Menu.Item>
       </Menu>
     );

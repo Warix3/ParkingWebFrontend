@@ -1,9 +1,10 @@
 export default {
   navTheme: 'dark',
-  // 拂晓蓝
+
   primaryColor: '#1890ff',
-  layout: 'sidemenu',
+  layout: 'topmenu',
   contentWidth: 'Fluid',
+  locale: 'en-US',
   fixedHeader: false,
   autoHideHeader: false,
   fixSiderbar: false,
@@ -11,7 +12,7 @@ export default {
   menu: {
     locale: true,
   },
-  title: 'Ant Design Pro',
+  title: 'Smart Parking',
   pwa: false,
   iconfontUrl: '',
 };

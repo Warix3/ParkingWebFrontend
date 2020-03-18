@@ -6,7 +6,7 @@ const CreateForm = props => {
   return (
     <Modal
       destroyOnClose
-      title="新建规则"
+      title="Lista rezervacija"
       visible={modalVisible}
       onCancel={() => onCancel()}
       footer={null}

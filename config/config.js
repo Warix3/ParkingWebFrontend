@@ -22,7 +22,7 @@ const plugins = [
         // default false
         enable: true,
         // default zh-CN
-        default: 'zh-CN',
+        default: 'en-US',
         // default true, when it is true, will use `navigator.language` overwrite default
         baseNavigator: true,
       },
@@ -108,8 +108,8 @@ export default {
             },
             {
               path: '/welcome',
-              name: 'welcome',
-              icon: 'smile',
+              name: 'Kontrolna ploča',
+              icon: 'dashboard',
               component: './Welcome',
             },
             {
@@ -129,10 +129,17 @@ export default {
               ],
             },
             {
-              name: 'list.table-list',
+              name: 'Lista rezervacija',
               icon: 'table',
               path: '/list',
               component: './ListTableList',
+            },
+
+            {
+              name: 'Lista Korisnika',
+              icon: 'profile',
+              path: '/korisnici',
+              component: './korisnici/ListTableListTwo',
             },
             {
               component: './404',

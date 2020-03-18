@@ -6,6 +6,12 @@ body,
   height: 100%;
 }
 
+.ant-menu.top-nav-menu.ant-menu-dark.ant-menu-root.ant-menu-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .colorWeak {
   filter: invert(80%);
 }
@@ -51,4 +57,17 @@ ol {
   body .ant-design-pro > .ant-layout {
     min-height: 100vh;
   }
+}
+
+.ant-pro-table-toolbar-item-icon {
+  display: none;
+}
+
+.ant-pro-table-toolbar-item-icon:last-child {
+  display: block;
+  margin-bottom: 65px;
+}
+
+.ant-table-cell .ant-divider.ant-divider-vertical {
+  display: none;
 }

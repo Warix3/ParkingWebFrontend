@@ -6,7 +6,8 @@ import ProTable from '@ant-design/pro-table';
 import CreateForm from './components/CreateForm';
 import UpdateForm from './components/UpdateForm';
 import { queryRule, updateRule, removeRule } from './service';
-//******************************************************LISTA REZERVACIJA *************************************************
+
+//******************************************************LISTA korisnika *************************************************
 /**
  * 添加节点
  * @param fields
@@ -75,29 +76,26 @@ const TableList = () => {
         },
       ],
     },
-
     {
-      title: 'Rezervirano mjesto',
-      sorter: true,
+      title: 'Ime i Prezime',
       dataIndex: 'desc',
       valueType: 'textarea',
     },
+    {
+      title: 'Broj registracije',
+      dataIndex: 'callNo',
+      sorter: false,
+      hideInForm: true,
+      renderText: val => `${val}`,
+    },
 
     {
-      title: 'Vrijeme registracije od  ',
+      title: 'Vrijeme registracije',
       dataIndex: 'updatedAt',
       sorter: true,
       valueType: 'dateTime',
       hideInForm: true,
     },
-    {
-      title: '- do',
-      dataIndex: 'updatedAt',
-      sorter: true,
-      valueType: 'dateTime',
-      hideInForm: true,
-    },
-
     {
       title: 'Opcije',
       dataIndex: 'option',
@@ -105,7 +103,7 @@ const TableList = () => {
       render: (_, record) => (
         <>
           <Divider type="vertical" />
-          <a href="">Detalji</a>
+          <a href="">Rezervacije</a>
         </>
       ),
     },
@@ -113,7 +111,7 @@ const TableList = () => {
   return (
     <PageHeaderWrapper>
       <ProTable
-        headerTitle="Rezervacije"
+        headerTitle="Korisnici"
         actionRef={actionRef}
         rowKey="key"
         onChange={(_, _filter, _sorter) => {
