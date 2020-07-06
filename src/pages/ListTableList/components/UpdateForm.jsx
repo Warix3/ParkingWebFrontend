@@ -53,30 +53,30 @@ const UpdateForm = props => {
     if (currentStep === 1) {
       return (
         <>
-          <FormItem name="target" label="监控对象">
+          <FormItem name="target" label="Praćenje objekta">
             <Select
               style={{
                 width: '100%',
               }}
             >
-              <Option value="0">表一</Option>
-              <Option value="1">表二</Option>
+              <Option value="0">Tablica 1</Option>
+              <Option value="1">Tablica 2</Option>
             </Select>
           </FormItem>
-          <FormItem name="template" label="规则模板">
+          <FormItem name="template" label="Predložak pravila">
             <Select
               style={{
                 width: '100%',
               }}
             >
-              <Option value="0">规则模板一</Option>
-              <Option value="1">规则模板二</Option>
+              <Option value="0">Predložak prvog pravila</Option>
+              <Option value="1">Predložak drugog pravila</Option>
             </Select>
           </FormItem>
-          <FormItem name="type" label="规则类型">
+          <FormItem name="type" label="Vrsta pravila">
             <RadioGroup>
-              <Radio value="0">强</Radio>
-              <Radio value="1">弱</Radio>
+              <Radio value="0">Jako</Radio>
+              <Radio value="1">Slabo</Radio>
             </RadioGroup>
           </FormItem>
         </>
@@ -88,11 +88,11 @@ const UpdateForm = props => {
         <>
           <FormItem
             name="time"
-            label="开始时间"
+            label="Vrijeme početka"
             rules={[
               {
                 required: true,
-                message: '请选择开始时间！',
+                message: 'Molimo odaberite vrijeme početka!',
               },
             ]}
           >
@@ -102,17 +102,17 @@ const UpdateForm = props => {
               }}
               showTime
               format="YYYY-MM-DD HH:mm:ss"
-              placeholder="选择开始时间"
+              placeholder="Odaberite vrijeme početka"
             />
           </FormItem>
-          <FormItem name="frequency" label="调度周期">
+          <FormItem name="frequency" label="Razdoblje planiranja">
             <Select
               style={{
                 width: '100%',
               }}
             >
-              <Option value="month">月</Option>
-              <Option value="week">周</Option>
+              <Option value="month">mjesec</Option>
+              <Option value="week">tjedan</Option>
             </Select>
           </FormItem>
         </>
@@ -123,11 +123,11 @@ const UpdateForm = props => {
       <>
         <FormItem
           name="name"
-          label="规则名称"
+          label="Naziv pravila"
           rules={[
             {
               required: true,
-              message: '请输入规则名称！',
+              message: 'Unesite naziv pravila!',
             },
           ]}
         >
@@ -135,16 +135,16 @@ const UpdateForm = props => {
         </FormItem>
         <FormItem
           name="desc"
-          label="规则描述"
+          label="Opis pravila"
           rules={[
             {
               required: true,
-              message: '请输入至少五个字符的规则描述！',
+              message: 'Unesite opis pravila s najmanje pet znakova!',
               min: 5,
             },
           ]}
         >
-          <TextArea rows={4} placeholder="请输入至少五个字符" />
+          <TextArea rows={4} placeholder="Unesite najmanje pet znakova" />
         </FormItem>
       </>
     );
@@ -160,11 +160,11 @@ const UpdateForm = props => {
             }}
             onClick={backward}
           >
-            上一步
+            Prošli
           </Button>
-          <Button onClick={() => handleUpdateModalVisible(false, values)}>取消</Button>
+          <Button onClick={() => handleUpdateModalVisible(false, values)}>Odustani</Button>
           <Button type="primary" onClick={() => handleNext()}>
-            下一步
+            Sljedeći
           </Button>
         </>
       );
@@ -179,11 +179,11 @@ const UpdateForm = props => {
             }}
             onClick={backward}
           >
-            上一步
+            Prošli
           </Button>
-          <Button onClick={() => handleUpdateModalVisible(false, values)}>取消</Button>
+          <Button onClick={() => handleUpdateModalVisible(false, values)}>Odustani</Button>
           <Button type="primary" onClick={() => handleNext()}>
-            完成
+            Sljedeći
           </Button>
         </>
       );
@@ -191,9 +191,9 @@ const UpdateForm = props => {
 
     return (
       <>
-        <Button onClick={() => handleUpdateModalVisible(false, values)}>取消</Button>
+        <Button onClick={() => handleUpdateModalVisible(false, values)}>Odustani</Button>
         <Button type="primary" onClick={() => handleNext()}>
-          下一步
+          Sljedeći
         </Button>
       </>
     );
@@ -206,7 +206,7 @@ const UpdateForm = props => {
         padding: '32px 40px 48px',
       }}
       destroyOnClose
-      title="规则配置"
+      title="Konfiguracija pravila"
       visible={updateModalVisible}
       footer={renderFooter()}
       onCancel={() => handleUpdateModalVisible(false, values)}
@@ -219,9 +219,9 @@ const UpdateForm = props => {
         size="small"
         current={currentStep}
       >
-        <Step title="基本信息" />
-        <Step title="配置规则属性" />
-        <Step title="设定调度周期" />
+        <Step title="Osnovne informacije" />
+        <Step title="Konfiguriranje svojstava pravila" />
+        <Step title="Postavite razdoblje zakazivanja" />
       </Steps>
       <Form
         {...formLayout}

@@ -78,7 +78,7 @@ const TableList = () => {
     },
     {
       title: 'Ime i Prezime',
-      dataIndex: 'desc',
+      dataIndex: 'owner',
       valueType: 'textarea',
     },
     {

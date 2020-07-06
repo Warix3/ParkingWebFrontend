@@ -1,5 +1,11 @@
 import { parse } from 'url';
 
+var chance = require('chance').Chance();
+
+function randomDate(start, end) {
+  return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+}
+
 // mock tableListDataSource
 const genList = (current, pageSize) => {
   const tableListDataSource = [];
@@ -14,13 +20,13 @@ const genList = (current, pageSize) => {
         'https://gw.alipayobjects.com/zos/rmsportal/eeHMaZBwmTvLdIwMfBpg.png',
         'https://gw.alipayobjects.com/zos/rmsportal/udxAbMEhpwthVVcjLXik.png',
       ][i % 2],
-      name: `TradeCode ${index}`,
-      owner: '曲丽丽',
-      desc: '这是一段描述',
+      name: chance.email(),
+      owner: chance.name(),
+      desc: `Parking mjesto broj: ${index}`,
       callNo: Math.floor(Math.random() * 1000),
       status: Math.floor(Math.random() * 10) % 4,
-      updatedAt: new Date(),
-      createdAt: new Date(),
+      updatedAt: randomDate(new Date(2020, 0, 1), new Date()),
+      createdAt: randomDate(new Date(), new Date(2020, 12, 31)),
       progress: Math.ceil(Math.random() * 100),
     });
   }

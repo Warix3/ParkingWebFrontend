@@ -47,7 +47,7 @@ const LoginItem = props => {
       return;
     }
 
-    message.success('获取验证码成功！验证码为：1234');
+    message.success('Uspješno primljen kontrolni kod! Kontrolni kod je：1234');
     setTiming(true);
   }, []);
   useEffect(() => {
@@ -100,7 +100,7 @@ const LoginItem = props => {
                   onGetCaptcha(value);
                 }}
               >
-                {timing ? `${count} 秒` : '获取验证码'}
+                {timing ? `${count} Drugi` : 'Pošalji kod'}
               </Button>
             </Col>
           </Row>

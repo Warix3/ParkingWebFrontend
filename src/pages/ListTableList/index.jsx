@@ -6,7 +6,7 @@ import ProTable from '@ant-design/pro-table';
 import CreateForm from './components/CreateForm';
 import UpdateForm from './components/UpdateForm';
 import { queryRule, updateRule, removeRule } from './service';
-//******************************************************LISTA REZERVACIJA *************************************************
+
 /**
  * 添加节点
  * @param fields
@@ -18,7 +18,7 @@ import { queryRule, updateRule, removeRule } from './service';
  */
 
 const handleUpdate = async fields => {
-  const hide = message.loading('正在配置');
+  const hide = message.loading('Učitavanje');
 
   try {
     await updateRule({
@@ -27,11 +27,11 @@ const handleUpdate = async fields => {
       key: fields.key,
     });
     hide();
-    message.success('配置成功');
+    message.success('Uspješno učitano');
     return true;
   } catch (error) {
     hide();
-    message.error('配置失败请重试！');
+    message.error('Učitavanje nije uspjelo, pokušajte ponovno!');
     return false;
   }
 };
@@ -71,7 +71,7 @@ const TableList = () => {
       rules: [
         {
           required: true,
-          message: '规则名称为必填项',
+          message: 'Ime je obavezno',
         },
       ],
     },
@@ -92,7 +92,7 @@ const TableList = () => {
     },
     {
       title: '- do',
-      dataIndex: 'updatedAt',
+      dataIndex: 'createdAt',
       sorter: true,
       valueType: 'dateTime',
       hideInForm: true,
@@ -163,6 +163,7 @@ const TableList = () => {
       />
       <CreateForm onCancel={() => handleModalVisible(false)} modalVisible={createModalVisible}>
         <ProTable
+          searchText = "TEST"
           onSubmit={async value => {
             const success = await handleAdd(value);
 
